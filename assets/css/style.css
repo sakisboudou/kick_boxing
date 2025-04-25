@@ -1,0 +1,747 @@
+/* =============================== */
+/* RESET & ΒΑΣΙΚΕΣ ΡΥΘΜΙΣΕΙΣ */
+/* =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =============================== */
+/* HEADER */
+/* =============================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #a47c48, #d2b48c, #f5f5dc);
+  padding: 15px 20px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.main-header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #4a3b30;
+}
+
+.main-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.main-header nav ul li a {
+  text-decoration: none;
+  color: #4a3b30;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* =============================== */
+/* HAMBURGER MENU */
+/* =============================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #4a3b30;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Hamburger active animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* =============================== */
+/* HERO SECTION */
+/* =============================== */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url('../images/gos-studio-16.jpg') no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 5%;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-content h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #a47c48;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #8b6436;
+  transform: translateY(-3px);
+}
+
+/* =============================== */
+/* ABOUT SECTION */
+/* =============================== */
+.about-section {
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #4a3b30;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.owners-wrapper {
+  /* Αν δεν θέλεις background εικόνα, μπορείς να την αφαιρέσεις */
+ background: url('../images/wood.jpg') center/cover no-repeat;
+
+  padding: 40px 20px;
+  /* Μείωσε το padding αν θέλεις συνολικά μικρότερο ύψος. */
+}
+
+.owners-container {
+  display: flex;
+  /* Αυτό είναι το κλειδί για να έχουν ίδιο ύψος τα κουτιά */
+  align-items: stretch; 
+  justify-content: center;
+  flex-wrap: wrap;  /* Αν δεν χωρούν σε μία γραμμή, τυλίγονται */
+  gap: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.owner {
+  flex: 1 1 300px;         /* Κρατά ~300px πλάτος, μεγαλώνει/μικραίνει ως flex */
+  text-align: center;
+  /* Μείωσε το padding για μικρότερο συνολικό ύψος */
+  padding: 30px 20px; 
+  /* Αφαίρεσε ή μηδένισε τυχόν min-height */
+  min-height: auto; 
+  /* Προαιρετικά: αν δεν θέλεις ημιδιαφάνεια, βάλε απευθείας background-color */
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.owner h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.owner p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 8px; /* Λίγο μικρότερο από default */
+  text-align: center;
+}
+
+.owners-container .owner p {
+  text-align: center !important;
+}
+
+
+/* Χρώματα για τους ιδιοκτήτες */
+.owner.george {
+  background-color: #8B5E3C; /* Σκούρο καφέ */
+  color: #FFF8F0;
+}
+
+.owner.olga {
+  background-color: #DCC9A6; /* Ανοιχτό καφέ */
+  color: #4B3B2A;
+}
+
+
+.about-image {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* =============================== */
+/* SECTION GENERAL STYLE */
+/* (Αν χρειάζεται γενική στοίχιση, κράτα μόνο το padding) */
+/* =============================== */
+section {
+  padding: 40px 20px;
+}
+
+/*
+  ΑΝ δε θέλεις να επιβάλλεις σε όλα τα <p> των sections justify κ.λπ.,
+  μπορείς να αφαιρέσεις ή να σχολιάσεις το παρακάτω.
+  Θα ελέγχεις ξεχωριστά το styling σε κάθε section (π.χ. .about-text p, .info p).
+*/
+/*
+section p {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+*/
+
+/* =============================== */
+/* INFO SECTION (Πληροφορίες & Οφέλη) */
+/* =============================== */
+.info {
+  background-color: #fafafa;
+  padding: 60px 20px;
+}
+
+.info .container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  color: #4a3b30;
+}
+
+.info h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  color: #4a3b30;
+}
+
+.info p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify; /* Επίλεξε left αν δεν θέλεις πλήρη στοίχιση */
+  color: #333;
+  max-width: 100%; /* Υπερισχύει του global section p */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info ul {
+  margin: 20px auto;
+  max-width: 700px;
+  list-style: disc inside;
+  padding-left: 20px;
+}
+
+.info ul li {
+  margin-bottom: 10px;
+}
+
+/* =============================== */
+/* FOOTER */
+/* =============================== */
+/* ======== Μινιμαλ Footer ======== */
+footer {
+  padding: 0.5rem; /* Μικρότερο κάθετο padding */
+  background: 
+       linear-gradient(135deg, rgba(139, 94, 60, 0.85), rgba(76, 53, 34, 0.85)),
+    url('../images/wood.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 0.9rem; /* Μικρότερη γραμματοσειρά σε όλο το footer */
+}
+
+/* Κοινά χαρακτηριστικά στα τμήματα του footer */
+.footer-location,
+.footer-logo,
+.footer-contact {
+  text-align: center;
+  margin: 5px 0;       /* Λιγότερο κάθετο κενό */
+  line-height: 1.4;    /* Ελαφρώς μικρότερη απόσταση μεταξύ γραμμών */
+}
+
+/* Μείωση μεγέθους στο λογότυπο */
+.footer-logo img {
+  width: 80px;         /* Μικρότερο πλάτος */
+  margin-top: 3px;     /* Μικρότερο κενό επάνω */
+}
+
+/* Σύνδεσμοι στο footer (π.χ. Πολιτική Απορρήτου, Όροι Χρήσης) */
+.footer-contact a,
+.footer-links a {
+  font-size: 0.9rem;   /* Εναρμόνιση με το συνολικό footer */
+  margin: 0 3px;       /* Μικρότερο οριζόντιο κενό */
+  text-decoration: none;
+  color: #fff;
+}
+.footer-contact a:hover,
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #ff0000;
+}
+
+/* Μείωση μεγέθους στα εικονίδια κοινωνικών δικτύων */
+.social-icons {
+  margin: 5px 0;
+}
+.social-icons a {
+  margin: 0 3px;       /* Λιγότερο οριζόντιο κενό */
+  color: white;
+  text-decoration: none;
+  font-size: 40px;      /* Μικρότερο μέγεθος εικονιδίων (πριν ήταν 70px) */
+}
+.social-icons a:hover {
+  color: #ff0000;
+}
+
+/* Μείωση μεγέθους στο εικονίδιο χάρτη (αν θέλεις να το μικρύνεις κι άλλο) */
+.map-icon {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.map-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+
+/* =============================== */
+/* CONTACT FORM STYLES */
+/* =============================== */
+.contact-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  display: inline-block;
+  background-color: #a47c48;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: #8c623d;
+}
+
+/* Responsive adjustments for Contact Form */
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 20px;
+    margin: 15px;
+  }
+}
+
+/* =============================== */
+/* CAROUSEL STYLES */
+/* =============================== */
+.slideshow-container {
+  position: relative;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots-container {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover,
+.dot.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.2s;
+}
+
+ .owners-wrapper {
+    /* Μικρότερο padding για κινητά */
+    padding: 20px 10px;
+  }
+
+  .owners-container {
+    /* Παραμένει align-items: stretch, 
+       ώστε τα κουτιά να έχουν ίδιο ύψος αν είναι δίπλα-δίπλα */
+    align-items: stretch;
+    /* Προαιρετικά, αν θες οριζόντια στοίχιση ακόμα και σε κινητά:
+       flex-wrap: nowrap; */
+    max-width: 100%; /* Για να χρησιμοποιεί όλο το πλάτος σε μικρή οθόνη */
+  }
+
+  .owner {
+    /* Κάνε τα κουτιά να «πιάνουν» όλο το πλάτος σε κινητά,
+       στοιχισμένα κάθετα */
+    flex: 1 1 100%;
+    /* Μείωσε το padding για λιγότερο ύψος */
+    padding: 15px 10px;
+    min-height: auto;
+  }
+
+  .owner h3 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+
+  .owner p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 5px;
+  }
+  
+  .info p,
+  .about-text p,
+  /* ή οποιαδήποτε άλλη κλάση αφορά τα κείμενά σου */
+  section p {
+    text-align: left !important;
+  }
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* =============================== */
+/* RESPONSIVE DESIGN */
+/* =============================== */
+@media (max-width: 768px) {
+
+  /* Header */
+  .main-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 35px;
+    height: 28px;
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 4px;
+    background-color: #2e1e0f;
+    border-radius: 2px;
+  }
+
+  /* Nav Menu */
+  .main-header nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: #d2b48c;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  .main-header nav ul.active {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-text, .about-image {
+    padding: 10px;
+  }
+
+  .about-text h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .owners-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .owner {
+    text-align: center;
+  }
+
+  .owner h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .owner p {
+    font-size: 1.2rem;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-location,
+  .footer-logo,
+  .footer-contact {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+  }
+footer {
+    font-size: 0.8rem; /* Μικρότερη γραμματοσειρά σε κινητά */
+    padding: 0.3rem;   /* Λιγότερο κάθετο padding */
+  }
+
+  .footer-logo img {
+    width: 60px;       /* Ακόμα μικρότερο λογότυπο σε κινητά */
+  }
+
+  .social-icons a {
+    font-size: 30px;   /* Μικρότερα social icons σε κινητά */
+    margin: 0 3px;     /* Λίγο λιγότερο κενό */
+  }
+
+  .map-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
